@@ -132,6 +132,14 @@ h3 { font-size: 1.35rem; }
     color: var(--text-muted);
     margin-bottom: 2.2rem;
 }
+.hero .lead-note {
+    max-width: 58ch;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+}
 .hero-ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 3rem; }
 
 .hero-facts {
@@ -159,11 +167,19 @@ h3 { font-size: 1.35rem; }
 .packages { padding: 6rem 0; }
 .section-head { text-align: center; margin-bottom: 3.5rem; }
 .section-head h2 { max-width: 22ch; margin: 0 auto; }
+.section-head .section-lead {
+    max-width: 56ch;
+    margin: 1.2rem auto 0;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
 
 .package-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .package {
@@ -205,7 +221,50 @@ h3 { font-size: 1.35rem; }
 }
 .package-lead { color: var(--text-muted); margin-bottom: 1.4rem; font-size: .95rem; }
 
-.package ul { list-style: none; margin-bottom: 1.8rem; flex: 1; }
+.package ul { list-style: none; margin-bottom: 1.4rem; flex: 1; }
+
+.package .price-note {
+    color: var(--text-muted);
+    font-size: .85rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
+    padding: .85rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid var(--accent);
+    border-radius: 4px;
+}
+
+.package-addon {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 1.4rem 1.8rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+}
+.package-addon .addon-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex: 0 0 auto;
+}
+.package-addon h3 {
+    font-size: 1.15rem;
+}
+.package-addon .price-inline {
+    color: var(--accent);
+    font-weight: 900;
+    font-size: 1.05rem;
+}
+.package-addon p {
+    color: var(--text-muted);
+    font-size: .95rem;
+    flex: 1 1 280px;
+}
 .package li {
     padding: .55rem 0 .55rem 1.6rem;
     font-size: .92rem;
@@ -307,6 +366,7 @@ h3 { font-size: 1.35rem; }
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 900px) {
     .package-grid { grid-template-columns: 1fr; }
+    .package-addon { flex-direction: column; align-items: flex-start; gap: .6rem; }
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .hero { padding: 4rem 0 3.5rem; }
     .packages, .about, .cta { padding: 4.5rem 0; }
